@@ -212,8 +212,8 @@ int main() {
 
             case 4:
                 printf("\nComparando Pontos Turísticos:\n");
-                printf("%s: %.2f\n", NomedaCidade1, pontosTuristicos1);
-                printf("%s: %.2f\n", NomedaCidade2, pontosTuristicos2);
+                printf("%s: %d\n", NomedaCidade1, pontosTuristicos1);
+                printf("%s: %d\n", NomedaCidade2, pontosTuristicos2);
 
                     if (pontosTuristicos1 > pontosTuristicos2) {
                         printf("Vencedor: %s\n", NomedaCidade1);
