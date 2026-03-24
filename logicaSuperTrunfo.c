@@ -85,7 +85,7 @@ int main() {
     printf("Super Poder: %.2f\n", Superpoder2);
 
 // Para cálculo do resultado (todos os atributos)
-    int pontos1 = 0;
+    /*int pontos1 = 0;
     int pontos2 = 0;
 
 // Área para comparação de cartas
@@ -141,8 +141,7 @@ int main() {
         pontos2++;
     }
 
-
-// Exibição dos Resultados:
+// Exibição dos Resultados
     printf("\n***RESULTADO FINAL***\n");
 
     printf("Carta 1 - %s (%c): %d pontos\n", NomedaCidade1, Estado1, pontos1);
@@ -154,7 +153,95 @@ int main() {
         printf("\nResultado: Carta 2 (%s) venceu!\n", NomedaCidade2);
     } else {
         printf("\nResultado: Empate!\n");
-    }
+    }*/
     
+// Menu interativo
+        int opcao;
+
+        printf("\nEscolha o atributo para comparar:\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos Turísticos\n");
+        printf("5 - Densidade Demográfica\n");
+        printf("Opcao: ");
+        scanf("%d", &opcao);
+
+            switch (opcao)
+            {
+            case 1:
+                printf("\nComparando População:\n");
+                printf("%s: %d\n", NomedaCidade1, Populacao1);
+                printf("%s: %d\n", NomedaCidade2, Populacao2);
+
+                    if (Populacao1 > Populacao2) {
+                        printf("Vencedor: %s\n", NomedaCidade1);
+                    } else if (Populacao2 > Populacao1) {
+                        printf("Vencedor: %s\n", NomedaCidade2);
+                    } else {
+                        printf("Empate!\n");
+                    }
+                break;
+
+            case 2:
+                printf("\nComparando Área:\n");
+                printf("%s: %.2f km2\n", NomedaCidade1, area1);
+                printf("%s: %.2f km2\n", NomedaCidade2, area2);
+
+                    if (area1 > area2) {
+                        printf("Vencedor: %s\n", NomedaCidade1);
+                    } else if (area2 > area1) {
+                        printf("Vencedor: %s\n", NomedaCidade2);
+                    } else {
+                        printf("Empate!\n");
+                    }
+                break;
+            case 3:
+                printf("\nComparando PIB:\n");
+                printf("%s: %.2f milhoes\n", NomedaCidade1, pib1);
+                printf("%s: %.2f milhoes\n", NomedaCidade2, pib2);
+
+                    if (pib1 > pib2) {
+                        printf("Vencedor: %s\n", NomedaCidade1);
+                    } else if (pib2 > pib1) {
+                        printf("Vencedor: %s\n", NomedaCidade2);
+                    } else {
+                        printf("Empate!\n");
+                    }
+                break;
+
+            case 4:
+                printf("\nComparando Pontos Turísticos:\n");
+                printf("%s: %.2f\n", NomedaCidade1, pontosTuristicos1);
+                printf("%s: %.2f\n", NomedaCidade2, pontosTuristicos2);
+
+                    if (pontosTuristicos1 > pontosTuristicos2) {
+                        printf("Vencedor: %s\n", NomedaCidade1);
+                    } else if (pontosTuristicos2 > pontosTuristicos1) {
+                        printf("Vencedor: %s\n", NomedaCidade2);
+                    } else {
+                        printf("Empate!\n");
+                    }
+                break;
+
+            case 5:
+                printf("\nComparando Densidade Demografica:\n");
+                printf("%s: %.2f\n", NomedaCidade1, DensidadePopulacional1);
+                printf("%s: %.2f\n", NomedaCidade2, DensidadePopulacional2);
+
+                    if (DensidadePopulacional1 < DensidadePopulacional2) {
+                        printf("Vencedor: %s\n", NomedaCidade1);
+                    } else if (DensidadePopulacional2 < DensidadePopulacional1) {
+                        printf("Vencedor: %s\n", NomedaCidade2);
+                    } else {
+                        printf("Empate!\n");
+                    }
+                break;
+            
+            default:
+                printf("Opcao invalida!\n");
+                break;
+            }
+
     return 0;
 }
