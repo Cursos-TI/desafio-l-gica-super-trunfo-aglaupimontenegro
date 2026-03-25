@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
+/*int main() {
 // Área para definição das variáveis para armazenar as propriedades das cidades
     char Estado1, Estado2;
     char Codigo1[4], Codigo2[4];
@@ -17,6 +19,8 @@ int main() {
     float DensidadePopulacional1, DensidadePopulacional2;
     float PIBperCapita1, PIBperCapita2;
     float Superpoder1, Superpoder2;
+    int resultado1, resultado2;
+    char atributo1, atributo2;
 
 // Área para entrada de dados
     printf("\n***CARTA 1***\n");
@@ -85,7 +89,7 @@ int main() {
     printf("Super Poder: %.2f\n", Superpoder2);
 
 // Para cálculo do resultado (todos os atributos)
-    /*int pontos1 = 0;
+    int pontos1 = 0;
     int pontos2 = 0;
 
 // Área para comparação de cartas
@@ -156,7 +160,7 @@ int main() {
     }*/
     
 // Menu interativo
-        int opcao;
+        /*int opcao;
 
         printf("\nEscolha o atributo para comparar:\n");
         printf("1 - População\n");
@@ -241,7 +245,117 @@ int main() {
             default:
                 printf("Opcao invalida!\n");
                 break;
-            }
+            }*/
 
+    int main () {
+        int resultado1, resultado2;
+        char atributo1, atributo2;
+        int populacao1, populacao2;
+        float area1, area2;
+        float pib1, pib2;
+        int pontosTuristicos1, pontosTuristicos2;
+        float DensidadePopulacional1, DensidadePopulacional2;
+
+//Gerar números aleatórios
+    srand(time(0));
+    populacao1 = 1;
+    populacao2 = 0;
+    area1 = 1;
+    area2 = 0;
+    pib1 = 1;
+    pib2 = 0;
+    pontosTuristicos1 = 1;
+    pontosTuristicos2 = 0;
+    DensidadePopulacional1 = 0;
+    DensidadePopulacional2 = 1;
+
+//Início do jogo (comparação de dois atributos)
+    printf("\nBem-vindo ao jogo!\n");
+    printf("Escolha o primeiro atributo:\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+
+    printf("\nEscolha a comparação: \n");
+    scanf(" %c", &atributo1);
+
+    switch (atributo1)
+    {
+    case '1':
+        printf("Você escolheu o atributo Populção!\n");
+        resultado1 = populacao1 > populacao2 ? 1 : 0;
+        break;
+    case '2':
+        printf("Você escolheu o atributo Área!\n");
+        resultado1 = area1 > area2 ? 1 : 0;
+        break;
+    case '3':
+        printf("Você escolheu o atributo PIB!\n");
+        resultado1 = pib1 > pib2 ? 1 : 0;
+        break;
+    case '4':
+        printf("Você escolheu o atributo Pontos Turísticos!\n");
+        resultado1 = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+        break;
+    case '5':
+        printf("Você escolheu o atributo Densidade Demográfica!\n");
+        resultado1 = DensidadePopulacional1 < DensidadePopulacional2 ? 1 : 0;
+        break;
+    default:
+        printf("Opção inválida!\n");
+        break;
+    }
+
+    printf("\nEscolha o segundo atributo:\n");
+    printf("Atenção! Você deve escolher um atributo diferente do primeiro.\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+
+    printf("\nEscolha a comparação: \n");
+    scanf(" %c", &atributo2);
+
+    if (atributo1 == atributo2) 
+    {
+        printf("Você escolheu o mesmo atributo!\n");
+    } else {    
+        switch (atributo2)
+        {
+        case '1':
+            printf("Você escolheu o atributo População!\n");
+            resultado2 = populacao1 > populacao2 ? 1 : 0;
+            break;
+        case '2':
+            printf("Você escolheu o atributo Área!\n");
+            resultado2 = area1 > area2 ? 1 : 0;
+            break;
+        case '3':
+            printf("Você escolheu o atributo PIB!\n");
+            resultado2 = pib1 > pib2 ? 1 : 0;
+            break;
+        case '4':
+            printf("Você escolheu o atributo Pontos Turísticos!\n");
+            resultado2 = pontosTuristicos1 > pontosTuristicos2 ? 1 : 0;
+            break;
+        case '5':
+            printf("Você escolheu o atributo Densidade Demográfica!\n");
+            resultado2 = DensidadePopulacional1 < DensidadePopulacional2 ? 1 : 0;
+            break;
+        default:
+            printf("Opção inválida!\n");
+            break;
+        }
+        if (resultado1 && resultado2) {
+            printf("\nParabéns, você venceu!\n");
+        } else if (resultado1 != resultado2) {
+            printf("\nEmpatou!\n");
+        } else {
+            printf("\nInfelizmente, você perdeu!\n");
+        }
+        }
     return 0;
 }
